@@ -1,4 +1,4 @@
-package com.boot.model;
+package com.abs.dazboot.model;
 
 public class Shipwreck {
   Long id;
