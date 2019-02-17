@@ -2,11 +2,11 @@ package com.abs.dazboot.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.abs.dazboot.controller.ShipwreckStub;
 import com.abs.dazboot.model.Shipwreck;
@@ -14,27 +14,27 @@ import com.abs.dazboot.model.Shipwreck;
 @RestController
 @RequestMapping("app/v1/")
 public class ShipwreckController {
-  @RequestMapping(value="shipwrecks", method=RequestMethod.GET)
+  @RequestMapping(value="shipwrecks", method = RequestMethod.GET)
   public List<Shipwreck> list() {
       return ShipwreckStub.list();
   }
   
-  @RequestMapping(value="shipwrecks}", method=RequestMethod.POST)
+  @RequestMapping(value = "shipwrecks}", method = RequestMethod.POST)
   public Shipwreck create(@RequestBody Shipwreck shipwreck) {
-      return Shipwreck.create(shipwreck);
+      return ShipwreckStub.create(shipwreck);
   }
 
-  @RequestMapping(value="shipwrecks/{id}", method=RequestMethod.GET)
+  @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.GET)
   public Shipwreck get(@PathVariable Long id) {
       return ShipwreckStub.get(id);
   }
 
-  @RequestMapping(value="shipwrecks/{id}", method=RequestMethod.PUT)
+  @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.PUT)
   public Shipwreck get(@PathVariable Long id, @RequestBody Shipwreck shipwreck) {
       return ShipwreckStub.update(id, shipwreck);
   }
 
-  @RequestMapping(value="shipwrecks/{id}", method=RequestMethod.DELETE)
+  @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.DELETE)
   public Shipwreck delete(@PathVariable Long id) {
       return ShipwreckStub.delete(id);
   }
