@@ -5,14 +5,13 @@ import java.util.List;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.boot.controller.ShipwreckStub;
 import com.boot.model.Shipwreck;
 
 @RestController
-@RequestMapping("app/v1/")
+@RequestMapping("api/v1/")
 public class ShipwreckController {
     @RequestMapping(value = "shipwrecks", method = RequestMethod.GET)
     public List<Shipwreck> list() {
